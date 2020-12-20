@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>FLOWER</title>
+    <link rel="stylesheet" href="folwer.css">
+</head>
+
+<body>
+<!-- 顶部 -->
+<div class="top">
+    <div class="size clear">
+         <img src="logo.jpg">
+    <div class="topnav">
+        <a class="active" href="#home">主页</a>
+        <a href="#about">关于</a>
+        <a href="#contact">联系我们</a>
+        <p class="zhucep">注册</p>
+    </div>
+    </div>
+</div>
+<br/>
+
+
+<!-- 轮播图 -->
+<div class="banner">
+    <div class="size clear"> 
+        <img src="1.jpg" alt="" class='text'>   
+        <img src="prev.png" alt="上一页" class="prev" />
+        <img src="next.png" alt="下一页" class="next" />
+    </div>
+    <div class="zhuce">
+        <!-- 盒子(一) -->
+    <div class="frame">
+        <div class="left">
+            <p>用户名</p>
+        </div>
+        <div>
+            <input type="text" class="inp1" />
+        </div>      
+    </div>
+<!-- 盒子(一)*tips -->
+    <div>
+        <p style="font-size:1px;" class="tips"> </p>
+    </div>
+
+
+<!-- 盒子(二) -->
+    <div class="frame">
+        <div class="left">
+            <p>设置密码</p>
+        </div>
+        <div>
+            <input type="password" class="inp2" />
+        </div>      
+    </div>
+<!-- 盒子(二)*tips -->
+    <div>
+        <p style="font-size:1px;" class="tips"> </p>
+    </div>
+
+<!-- 盒子(三) -->
+    <div class="frame frame2 inp3">
+        <p>立即注册</p>
+    </div>
+</div>
+<div class="left">
+    <div>
+        <p class="end"></p>
+    </div>
+    <div>
+        <p class="end"></p>
+    </div>
+    <div>
+        <p class="end"></p>
+    </div>
+    </div>
+
+</div>
+
+
+
+<!-- 轮播图js -->
+<script type="text/javascript">
+    var prev = document.getElementsByClassName('prev')[0];
+    var next = document.getElementsByClassName('next')[0];
+    var text = document.getElementsByTagName('img')[1];
+    var i = 0;
+    var j = 0;
+    prev.onclick = function(){
+        i++;
+        console.log(i);
+        if(i % 3 == 1){
+            text.src = '2.jpg';
+        }
+        else if(i % 3 == 2){
+            text.src = '3.jpg';
+        }
+        else{
+            text.src = '1.jpg';
+        }
+        
+    }
+
+    next.onclick = function(){
+        i++;
+        console.log(i)
+        if(i % 3 == 1){
+            text.src = '2.jpg';
+        }
+        else if(i % 3 == 2){
+            text.src = '3.jpg';
+        }
+        else{
+            text.src = '1.jpg';
+        }
+    }
+</script>
+
+<script>
+    var zhucep = document.getElementsByClassName('zhucep')[0];
+    var text = document.getElementsByClassName('text')[0];
+    var inp1 = document.getElementsByClassName('inp1')[0];
+    var inp3 = document.getElementsByClassName('inp3')[0];
+    var tips = document.getElementsByClassName('tips')[0];
+    zhucep.onclick = function(){
+        
+        text.style.zIndex = 0;
+    }
+    inp1.onfocus=function(){
+        
+        tips.innerHTML = "支持中文数字";
+    }
+    inp1.onblur=function(){
+        if(this.value ==""){
+            tips.innerHTML = "用户名不能为空";
+        }
+        else{
+            tips.innerHTML = "";
+        }
+    }
+
+    var inp2 = document.getElementsByClassName('inp2')[0];
+    var tips2 = document.getElementsByClassName('tips')[1];
+    inp2.onfocus=function(){
+        
+        tips2.innerHTML = "建议至少使用两种组合";
+    }
+    inp2.onblur=function(){
+        if(this.value ==""){
+            tips2.innerHTML = "密码不能为空";
+        }
+        else{
+            tips2.innerHTML = "";
+        }
+    }
+
+    inp3.onclick = function(){
+        alert("注册成功!" + "\n" + "用户名:" +inp1.value)
+        text.style.zIndex = 10;
+    }
+
+
+</script>
+
+
+
+
+<br/>
+<div class="text">
+<div class="size">
+    <p>Recent Photos</p>
+</div>
+</div>
+
+<div class="ad">
+<div class="product size clear">
+        <ul class="product-big">
+            <li class="product-item">
+                <img src="1.jpg" alt="" width="488" height="484" />
+                <div class="product-info">
+                    <h3>Serendipity</h3>
+                    <p>2020.5.20</p>
+                </div>
+            </li>
+        </ul>
+        <ul class="product-small clear">
+            <li class="product-item">
+                <img src="1.jpg" alt="" width="340" height="242" />
+                <div class="product-info">
+                    <h3>Eternity</h3>
+                    <p>2020.5.20</p>
+                </div>
+            </li>
+            <li class="product-item">
+                <img src="2.jpg" alt="" width="340" height="242" />
+                <div class="product-info">
+                    <h3>Limerence</h3>
+                    <p>2020.5.20</p>
+                </div>
+            </li>
+            <li class="product-item">
+                <img src="3.jpg" alt="" width="340" height="242" />
+                <div class="product-info">
+                    <h3> Tranquillity </h3>
+                    <p>2020.5.20</p>
+                </div>
+            </li>
+            <li class="product-item">
+                <img src="4.jpg" alt="" width="340" height="242" />
+                <div class="product-info">
+                    <h3>Enthusiasm</h3>
+                    <p>2020.5.20</p>
+                </div>
+            </li>
+        </ul>
+</div>
+</div>
+
+<div class="text">
+<div class="size">
+    <p>More</p>
+</div>
+</div>
+<div class="footer size">
+    <div class="ll">
+    <div class="flowerr">
+      <h4 class="ran">点击:随机花语</h4>
+    </div>
+     <p class="flower"></p>
+<script type="text/javascript">
+    var  ran = document.getElementsByClassName('ran')[0];
+    var  flower = document.getElementsByClassName('flower')[0];
+
+    ran.onclick = function(){
+       var j = Math.floor(Math.random()*10);
+       switch(j){
+        case 0:
+        flower.innerHTML = "蔷薇（白）:纯洁的爱情 神秘而凄凉";
+        break;
+        case 1:
+        flower.innerHTML = "蔷薇（红）:只想与你在一起";
+        break;
+        case 2:
+        flower.innerHTML = "康乃馨:温馨的母亲";
+        break;
+        case 3:
+        flower.innerHTML = "薰衣草:等待爱情";
+        break;
+        case 4:
+        flower.innerHTML = "郁金香:永恒的祝福";
+        break;
+        case 5:
+        flower.innerHTML = "栀子花:永恒的爱与约定";
+        break;
+        case 6:
+        flower.innerHTML = "雏菊:纯洁的美";
+        break;
+        case 7:
+        flower.innerHTML = "满天星:纯洁的心";
+        break;
+        case 8:
+        flower.innerHTML = "桔梗花:无望的爱";
+        break;
+        case 9:
+        flower.innerHTML = "矢车菊:幸福";
+        break;
+       }
+    }
+</script>
+    </div>
+       <div class="l">
+        <h4>技艺及了解</h4>
+        <ul class="clear">
+            <li>传统技艺</li>
+            <li>传统美术</li>
+            <li>传统插花</li>
+            <li>传统花酿</li>
+            <li>传统香料</li>
+            <li>传统服饰</li>
+            <li class="last">传统美食</li>
+        </ul>
+        </div>
+        <div class="r">
+        <h4>俱乐部</h4>
+        <ul class="clear">
+            <li>优惠券</li>
+            <li>限时打折</li>
+            <li>拍卖</li>
+            <li>团购</li>
+            <li>积分兑换</li>
+            <li class="last">私人定制</li>
+        </ul>
+        </div>
+    </div>
+   <div class="bottom">
+    <div class="size">
+        <p style="">© 2020-2021 CHEN 版权所有，并保留所有权利。冀ICP备123456号-1</p>
+    </div>
+   </div>
+</body>
